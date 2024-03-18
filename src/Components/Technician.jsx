@@ -35,7 +35,7 @@ const Technician = () => {
 
   useEffect(() => {
     if (!userId) {
-        navigate('/login'); // Redirect to login route if userId is not available
+        navigate('/login'); 
     }
 }, [userId, navigate]);
     async function Load() {

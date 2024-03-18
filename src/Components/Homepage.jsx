@@ -19,7 +19,7 @@ const Homepage = () => {
     const [userId, setuserId] = useState(location.state?.userId || '');
   
     useEffect(() => {
-      // Show an alert with the patientId when the component mounts or when it changes
+    
       //alert('Current patientId: ' + userId);
     }, [userId]);
   
@@ -36,7 +36,7 @@ const Homepage = () => {
     <div>
         <Nav onLogout={handleLogout} />
         <Cars/>
-        {/* <button onClick={logout}>Logout</button> */}
+      
             <section className="about section-padding">
                 <div className="container">
                     <div className="row">

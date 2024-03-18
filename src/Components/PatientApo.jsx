@@ -44,14 +44,14 @@ const PatientApo = () => {
       fetchUserAppointments();
     }, []);
     const handleLogout = () => {
-      // Perform logout actions
+
       navigate('/homepage');
       setPatientId('');
       alert('Logged out');
   };
   useEffect(() => {
     if (!userId) {
-        navigate('/login'); // Redirect to login route if userId is not available
+        navigate('/login'); 
     }
 }, [userId, navigate]);
 
@@ -116,8 +116,8 @@ async function LoadTests() {
         // Send payment information to the API
         await axios.post("http://localhost:8089/api/v1/payment/save", {
           patientId: userId,
-          apoinmentId: selectedAppointmentId, // You need to define this
-          testID: selectedTestId, // You need to define this
+          apoinmentId: selectedAppointmentId, 
+          testID: selectedTestId, 
           paymentStatus: true
         });
         const appointmentDetails = Appoinments.find(appointment => appointment._id === selectedAppointmentId);
@@ -127,8 +127,8 @@ async function LoadTests() {
         await axios.put(`http://localhost:8089/api/v1/Appoinment/edit/${selectedAppointmentId}`, {
           paymentStatus: true,
           patientId: userId,
-          apoinmenttime: appointmentDetails.apoinmenttime, // Include appointment time
-          appointmentDate: appointmentDetails.appointmentDate // Include appointment date
+          apoinmenttime: appointmentDetails.apoinmenttime, 
+          appointmentDate: appointmentDetails.appointmentDate 
           
     });
 
